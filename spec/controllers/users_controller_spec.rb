@@ -9,4 +9,11 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "error message check" do
+    it "return can't be blank" do
+        user = User.new()
+        user.valid?
+        expect(user.errors.messages[:name]).to include("can't be blank")
+    end
+  end
 end
