@@ -1,0 +1,14 @@
+<li id="imagepost-<%= imagepost.id %>">
+  <span class="user"><%= link_to imagepost.user.name, imagepost.user %></span>
+  <span class="content">
+    <%= imagepost.content %>
+    <%= image_tag imagepost.picture.url if imagepost.picture? %>
+    </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(imagepost.created_at) %> ago.
+    <% if current_user?(imagepost.user) %>
+      <%= link_to "delete", imagepost, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>,

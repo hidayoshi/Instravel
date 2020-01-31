@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    if logged_in?
+      @imagepost = current_user.imageposts.build
+      @feed_items = current_user.feed
+    end
+  end
 end
