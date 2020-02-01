@@ -6,7 +6,7 @@
     </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(imagepost.created_at) %> ago.
-    <% if current_user?(imagepost.user) %>
+    <% if current_user?(imagepost.user) || current_user.admin? %>
       <%= link_to "delete", imagepost, method: :delete,
                                     data: { confirm: "You sure?" } %>
     <% end %>
