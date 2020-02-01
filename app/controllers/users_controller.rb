@@ -66,7 +66,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :avatar)
   end
 
   # fetch(:search, {})をrequire(:search)に書き換えるとparams[:search]が必須になる

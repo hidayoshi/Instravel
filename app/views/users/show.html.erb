@@ -3,9 +3,8 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
-      <p>
-        <%= @user.name %>
-      </p>
+      <%= render 'users/avatar' %>
+      <p><%= @user.name %></p>
       <%= link_to "Settings", edit_user_path(current_user) %>
     </section>
     <section class="stats">
