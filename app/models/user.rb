@@ -95,6 +95,16 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  scope :search, lambda { |search_params|
+    return if search_params.blank?
+
+    # パラメータを指定して検索を実行する
+    name_like(search_params[:name])
+  }
+  scope :name_like, lambda { |name|
+                      where('name LIKE ?', "%#{name}%") if name.present?
+                    }
+
   private
 
   def downcase_email

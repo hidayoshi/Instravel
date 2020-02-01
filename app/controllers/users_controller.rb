@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.all
+    @search_params = user_search_params
+    @users = User.search(@search_params)
   end
 
   def show
@@ -66,6 +67,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
+  end
+
+  # fetch(:search, {})をrequire(:search)に書き換えるとparams[:search]が必須になる
+  def user_search_params
+    params.fetch(:search, {}).permit(:name)
   end
 
   def correct_user
