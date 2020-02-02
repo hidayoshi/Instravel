@@ -1,47 +1,7 @@
 @import "bootstrap";
 
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
 .center {
   text-align: center;
-}
-
-/* typography */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
 }
 
 /* header */
@@ -57,15 +17,18 @@ p {
   overflow: auto;
   margin-top: 0;
   padding: 0;
+
   a {
     float: left;
     padding: 0 10px;
     border-left: 1px solid lightgray;
     color: gray;
+
     &:first-child {
       padding-left: 0;
       border: 0;
     }
+
     &:hover {
       text-decoration: none;
       color: blue;
@@ -73,14 +36,11 @@ p {
   }
 }
 
-.users.follow {
-  padding: 0;
-}
-
 /* form */
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -92,39 +52,4 @@ p {
 .imageposts {
   list-style: none;
   padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: gray;
-    display: block;
-    margin-left: 60px;
-  }
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
 }

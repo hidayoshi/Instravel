@@ -1,23 +1,23 @@
 <% provide(:title, @user.name) %>
-
 <div class="row">
   <aside class="col-md-4">
     <section>
-      <%= render 'users/avatar' %>
-      <p><%= @user.name %></p>
-      <p>Posts (<%= @user.imageposts.count %>)</p>
-      <%= link_to "Settings", edit_user_path(current_user) %>
+      <%= render 'shared/avatar', object: @user %>
+      <p class="font-weight-bold"><%= @user.name %></p>
+      <p><%= pluralize(@user.imageposts.count, "post") %></p>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
+    <section>
+      <%= render 'follow_form' if logged_in? %>
+    </section>
   </aside>
-    <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
+  <div class="col-md-8">
     <% if @user.imageposts.any? %>
       <ol class="imageposts">
         <%= render @imageposts %>
       </ol>
     <% end %>
-    </div>
+  </div>
 </div>

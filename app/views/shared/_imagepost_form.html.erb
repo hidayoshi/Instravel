@@ -1,17 +1,28 @@
 <%= form_with model: @imagepost, local: true do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new imagepost..." %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <span class="font-weight-bold">
+        HOME
+      </span>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="form-group">
+          <%= f.text_area :content, placeholder: "Compose new imagepost...",
+                          class: "form-control w-100" %>
+        </div>
+        <div class="form-group">
+          <%= f.file_field :picture, class: "form-control-file" %>
+        </div>
+      </p>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+    </div>
   </div>
-  <span class="picture">
-    <%= f.file_field :picture %>
-  </span>
-  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
-
 <script type="text/javascript">
   $('#imagepost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
+  var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }

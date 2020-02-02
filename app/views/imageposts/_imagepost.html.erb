@@ -1,14 +1,27 @@
 <li id="imagepost-<%= imagepost.id %>">
-  <span class="user"><%= link_to imagepost.user.name, imagepost.user %></span>
-  <span class="content">
-    <%= imagepost.content %>
-    <%= image_tag imagepost.picture.url if imagepost.picture? %>
-    </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(imagepost.created_at) %> ago.
-    <% if current_user?(imagepost.user) || current_user.admin? %>
-      <%= link_to "delete", imagepost, method: :delete,
-                                    data: { confirm: "You sure?" } %>
-    <% end %>
-  </span>
-</li>,
+  <div class="card mb-3">
+    <div class="card-header">
+      <% if imagepost.user.avatar? %>
+        <%= image_tag imagepost.user.avatar.url, size: '49x49' %>
+      <% else %>
+        <%= image_tag("no-image-49x50.jpg") %>
+      <% end %>
+      <%= link_to imagepost.user.name, imagepost.user %>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= image_tag imagepost.picture.url, class: "card-img-top" if imagepost.picture? %>
+        <%= imagepost.content %>
+        <div class="text-muted">
+          Posted <%= time_ago_in_words(imagepost.created_at) %> ago.
+        </div>
+      </p>
+      <div class="text-right">
+        <% if current_user?(imagepost.user) || current_user.admin? %>
+          <%= link_to "delete", imagepost, method: :delete,
+                                      data: { confirm: "You sure?" }, class: "text-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</li>

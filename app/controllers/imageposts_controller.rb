@@ -4,6 +4,7 @@ class ImagepostsController < ApplicationController
   before_action :logged_in_user, only: %i[create destroy]
   before_action :correct_user,   only: :destroy
   before_action :admin_user,     only: :destroy
+  # attr_accessor :avatar
 
   def create
     @imagepost = current_user.imageposts.build(imagepost_params)

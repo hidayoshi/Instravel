@@ -1,0 +1,5 @@
+    <% if object.avatar? %>
+  <%= image_tag object.avatar.url, size: '139x139' %>
+<% else %>
+  <%= image_tag("no-image-139x145.jpg") %>
+<% end %>

@@ -1,6 +1,4 @@
 <%# text_fieldにvalue: @serach_params[:name]で初期状態を持たせたい %>
-<%= form_with(scope: :search, url: users_path, method: :get, local: true) do |f| %>
-    <div class="form-inline">
-      <%= f.text_field :name, class: "form-control", placeholder: "Search" %>
-    </div>
+<%= form_with(scope: :search, url: users_path, method: :get, local: true, class: "form-inline") do |f| %>
+  <%= f.text_field :name, class: "form-control text-center", placeholder: "Search" %>
 <% end %>
