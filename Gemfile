@@ -60,7 +60,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # 追加したgem
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 2.0'
 gem 'htmlbeautifier', '~> 1.3', '>= 1.3.1'
 gem 'jquery-rails'

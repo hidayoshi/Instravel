@@ -8,6 +8,7 @@ class Imagepost < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 2000 }
   validate  :picture_size
+    # attr_accessor :avatar
 
   private
 
