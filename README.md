@@ -19,7 +19,7 @@
 
 ## アプリケーション内で使用している技術一覧
 
-- バックエンドー Ruby, Rails
+- バックエンドー Ruby2.5.1, Rails5.1.7
 - フロントエンドー bootstrap
 - データベースー MySQL
 - セッション管理ー session と Cookie
