@@ -18,7 +18,7 @@
       </p>
       <div class="text-right">
         <% if !logged_in? %>
-        <% elsif current_user?(imagepost.user)  || current_user.admin? %>
+        <% elsif current_user?(imagepost.user) %>
           <%= link_to "delete", imagepost, method: :delete,
                                       data: { confirm: "You sure?" }, class: "text-danger" %>
         <% end %>
