@@ -1,8 +1,12 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-      <%= render 'shared/avatar', object: current_user %>
       <section>
+          <% if current_user.avatar? %>
+            <%= image_tag current_user.avatar.url, size: '139x139' %>
+          <% else %>
+            <%= image_tag("no-image-139x145.jpg") %>
+          <% end %>
         <p class="font-weight-bold"><%= current_user.name %></p>
         <p><%= pluralize(current_user.imageposts.count, "post") %></p>
       </section>

@@ -2,7 +2,11 @@
 <div class="row">
   <aside class="col-md-4">
     <section>
-      // <%= render 'shared/avatar', object: @user %>
+          <% if @user.avatar? %>
+            <%= image_tag @user.avatar.url, size: '139x139' %>
+          <% else %>
+            <%= image_tag("no-image-139x145.jpg") %>
+          <% end %>
       <p class="font-weight-bold"><%= @user.name %></p>
       <p><%= pluralize(@user.imageposts.count, "post") %></p>
     </section>

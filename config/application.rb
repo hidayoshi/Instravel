@@ -19,5 +19,9 @@ module Instravel
 
     # 認証トークンをremoteフォームに埋め込む
     config.action_view.embed_authenticity_token_in_remote_forms = true
+
+    # Force all access to the app over SSL, use Strict-Transport-Security,
+  # and use secure cookies.
+  # config.force_ssl = true
   end
 end
