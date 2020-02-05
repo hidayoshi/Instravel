@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##アプリケーションの概要
+旅行写真に特化した Instgram ライクなサービスです。
 
-Things you may want to cover:
+##アプリケーションの機能一覧
 
-* Ruby version
+- 記事一覧表示機能
+- 記事詳細表示機能
+- 記事投稿機能
+- ユーザ登録機能
+- 管理ユーザログイン機能
+- 画像ファイルのアップロード機能
+- ページネーション機能
+- Bootstrap を用いたレイアウト
+- 検索機能
+- フォロー/フォロワー機能
 
-* System dependencies
+##アプリケーション内で使用している技術一覧
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- バックエンドー Ruby, Rails
+- フロントエンドー bootstrap
+- データベースー MySQL
+- セッション管理ー session と Cookie
+- デプロイー Heroku
+- 画像アップロードー carrierwave
